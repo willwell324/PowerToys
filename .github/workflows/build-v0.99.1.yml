@@ -9,11 +9,13 @@ jobs:
     timeout-minutes: 180
 
     steps:
-      - name: Checkout v0.99.1
+      - name: Checkout upstream v0.99.1
         uses: actions/checkout@v4
         with:
+          repository: microsoft/PowerToys
           ref: v0.99.1
           submodules: recursive
+          fetch-depth: 1
 
       - name: Setup .NET 8 SDK
         uses: actions/setup-dotnet@v4
